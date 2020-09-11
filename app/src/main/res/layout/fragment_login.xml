@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/background1"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout2"
+            android:layout_width="271dp"
+            android:layout_height="283dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="@dimen/barWidth"
+                android:layout_height="@dimen/barHeight"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/roboto"
+                android:text="Login"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/forgetText" />
+
+            <EditText
+                android:id="@+id/nameEdit"
+                android:layout_width="@dimen/barWidth"
+                android:layout_height="@dimen/barHeight"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/passText"
+                app:layout_constraintStart_toStartOf="@+id/passText"
+                style="@style/editStyle" />
+
+            <TextView
+                android:id="@+id/nameText"
+                style="@style/textStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Username"
+                app:layout_constraintBottom_toTopOf="@+id/nameEdit"
+                app:layout_constraintStart_toStartOf="@+id/nameEdit" />
+
+            <TextView
+                android:id="@+id/passText"
+                style="@style/textStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Password"
+                app:layout_constraintBottom_toTopOf="@+id/passEdit"
+                app:layout_constraintStart_toStartOf="@+id/passEdit" />
+
+            <EditText
+                android:id="@+id/passEdit"
+                style="@style/editStyle"
+                android:layout_width="@dimen/barWidth"
+                android:layout_height="@dimen/barHeight"
+                android:layout_marginTop="150dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/roboto_slab_bold"
+                android:text="Login"
+                android:textColor="#3c3c3b"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/nameText"
+                app:layout_constraintStart_toStartOf="@+id/nameText" />
+
+            <TextView
+                android:id="@+id/forgetText"
+                style="@style/textQMStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Forgot your password?"
+                android:textColor="#5285e9"
+                app:layout_constraintStart_toStartOf="@+id/passEdit"
+                app:layout_constraintTop_toBottomOf="@+id/passEdit" />
+
+            <TextView
+                android:id="@+id/signUpText"
+                style="@style/textQMStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Sign up"
+                android:textColor="#fe9fb5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/notAccountText"
+                app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+            <TextView
+                android:id="@+id/notAccountText"
+                style="@style/textStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dont' have account?"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/signUpText"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
