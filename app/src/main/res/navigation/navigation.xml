@@ -8,21 +8,11 @@
         android:name="com.example.uipractice1.screens.login.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_login_to_profile"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.uipractice1.screens.profile.ProfileFragment"
         android:label="ProfileFragment" />
-    <dialog
-        android:id="@+id/fingerprintDialogFragment"
-        android:name="com.example.uipractice1.screens.login.FingerprintDialogFragment"
-        android:label="FingerprintDialogFragment" >
-        <action
-            android:id="@+id/action_fingerprintDialogFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@+id/loginFragment" />
-    </dialog>
 </navigation>

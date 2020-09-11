@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.example.uipractice1.screens.login.LoginViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
@@ -28,21 +35,22 @@
                 android:layout_marginTop="6dp"
                 android:background="@drawable/button_background"
                 android:fontFamily="@font/roboto"
-                android:text="Login"
+                android:text="@string/text_login_button"
                 android:textColor="#FFFFFF"
-                android:textSize="8sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/forgetText" />
 
             <EditText
                 android:id="@+id/nameEdit"
+                style="@style/editStyle"
                 android:layout_width="@dimen/barWidth"
                 android:layout_height="@dimen/barHeight"
                 android:layout_marginBottom="12dp"
+                android:autofillHints=""
                 app:layout_constraintBottom_toTopOf="@+id/passText"
-                app:layout_constraintStart_toStartOf="@+id/passText"
-                style="@style/editStyle" />
+                app:layout_constraintStart_toStartOf="@+id/passText" />
 
             <TextView
                 android:id="@+id/nameText"
@@ -50,7 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:text="Username"
+                android:labelFor="@+id/nameEdit"
+                android:text="@string/text_username"
                 app:layout_constraintBottom_toTopOf="@+id/nameEdit"
                 app:layout_constraintStart_toStartOf="@+id/nameEdit" />
 
@@ -60,7 +69,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:text="Password"
+                android:labelFor="@id/passEdit"
+                android:text="@string/text_password"
                 app:layout_constraintBottom_toTopOf="@+id/passEdit"
                 app:layout_constraintStart_toStartOf="@+id/passEdit" />
 
@@ -70,6 +80,7 @@
                 android:layout_width="@dimen/barWidth"
                 android:layout_height="@dimen/barHeight"
                 android:layout_marginTop="150dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/roboto_slab_bold"
-                android:text="Login"
+                android:text="@string/text_login_button"
                 android:textColor="#3c3c3b"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/nameText"
@@ -95,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Forgot your password?"
+                android:text="@string/text_forget"
                 android:textColor="#5285e9"
                 app:layout_constraintStart_toStartOf="@+id/passEdit"
                 app:layout_constraintTop_toBottomOf="@+id/passEdit" />
@@ -107,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Sign up"
+                android:text="@string/text_signup"
                 android:textColor="#fe9fb5"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +131,7 @@
                 style="@style/textStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dont' have account?"
+                android:text="@string/text_not_account"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/signUpText"
                 app:layout_constraintHorizontal_bias="0.5"
