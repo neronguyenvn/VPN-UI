@@ -14,5 +14,9 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.uipractice1.screens.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

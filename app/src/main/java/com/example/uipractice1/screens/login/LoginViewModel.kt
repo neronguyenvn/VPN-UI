@@ -49,10 +49,10 @@ class LoginViewModel : ViewModel() {
         ) == 1
     }
 
-    private fun getSharedPrefUsername(activity: Activity) =
+    fun getSharedPrefUsername(activity: Activity) =
         activity.getString(R.string.sharedPref_username)
 
-    private fun getSharedPrefPassword(activity: Activity) =
+    fun getSharedPrefPassword(activity: Activity) =
         activity.getString(R.string.sharedPref_password)
 
     fun getSharedPrefActiveFA(activity: Activity) = activity.getString(R.string.sharedPref_activeFA)

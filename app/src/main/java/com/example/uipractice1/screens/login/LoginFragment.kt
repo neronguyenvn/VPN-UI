@@ -1,7 +1,6 @@
 package com.example.uipractice1.screens.login
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.uipractice1.R
@@ -24,6 +22,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val binding: FragmentLoginBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
 
@@ -42,7 +41,7 @@ class LoginFragment : Fragment() {
 
         viewModel.haveLoggedIn(requireActivity(), executor, this, sharedPref)
 
-        viewModel.checkLogin.observe(viewLifecycleOwner, Observer { check ->
+        viewModel.checkLogin.observe(viewLifecycleOwner, { check ->
             when (check) {
                 1 -> {
                     viewModel.createAlertDialog(requireActivity(), executor, sharedPref, this)
@@ -55,7 +54,7 @@ class LoginFragment : Fragment() {
             }
         })
 
-        viewModel.checkNav.observe(viewLifecycleOwner, Observer { check ->
+        viewModel.checkNav.observe(viewLifecycleOwner, { check ->
             when (check) {
                 1 -> {
                     this.findNavController().navigate(R.id.action_login_to_profile)
